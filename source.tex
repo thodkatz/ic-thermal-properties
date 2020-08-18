@@ -13,7 +13,7 @@
 	\begin{itemize}
 		\item Fix typos in section \ref{subsec:modeling}.
 		\item Table \ref{tab:plate}: Heat Capacity of Tin changed from 0.226 to 226.
-		\item Archived websites.
+		\item Add image sources and archive websites.
 	\end{itemize}
 	\bigskip
 	Added:
@@ -124,16 +124,16 @@
 	
 	\begin{figure}[h!]
 		\centering
-		\begin{subfigure}{.5\textwidth}
+		\begin{subfigure}{.3\textwidth}
 			\centering
-			\includegraphics[keepaspectratio, width=0.7\linewidth]{docs/lga.png}
-			\caption{Bottom side}
+			\includegraphics[keepaspectratio, height=.4\textheight, width=\textwidth]{docs/lga.png}
+			\caption{Bottom side \small{(\href{https://web.archive.org/web/20200818134018/https://www.nxp.com/docs/en/application-note/AN2265.pdf}{image source})}}
 			\label{fig:sub1}
 		\end{subfigure}%
-		\begin{subfigure}{.5\textwidth}
+		\begin{subfigure}{.6\textwidth}
 			\centering
-			\includegraphics[keepaspectratio, width=1.2\linewidth, height=.4\textheight]{docs/lga_cross.png}
-			\caption{Cross section view}
+			\includegraphics[keepaspectratio, width=\textwidth, height=.6\textheight]{docs/lga_cross.png}
+			\caption{Cross section view \small{(\href{https://web.archive.org/web/20200818134018/https://www.nxp.com/docs/en/application-note/AN2265.pdf}{image source})}}
 			\label{fig:sub2}
 		\end{subfigure}
 		\caption{LGA}
@@ -164,7 +164,7 @@
 	LQFP stands for Low profile Quad Flat Package, it has 144 pins and it belongs to the very well-know QFP series. There are slight variations for the physical dimensions of the components associated with this code-name, but the AcubeSAT's components with this tag are all the same. These are the \textbf{OBDH, SU and ADCS MCU}.
 	%We should mention that we for the physical dimensions part we will focus to the leads-PCB interconnection. So without further ado let's start dissecting this package. Double check that the dimensions are the same.
 	
-	First, from the material declaration (see the complete document \href{https://www.st.com/content/ccc/resource/quality_and_reliability/quality_certificate/material_declaration/group3/be/7d/54/2a/11/68/4e/ad/DM00442253/files/P41A_470XXXY_signed.pdf/jcr:content/translations/en.P41A_470XXXY_signed.pdf}{here}) we can validate that it is a plastic leadframe-based package. Indeed, we can see references for the leadframe and the encapsulation. But let's make a summary for the listed-materials.
+	First, from the material declaration (see the complete document \href{https://web.archive.org/web/20200818131830/https://www.st.com/content/ccc/resource/quality_and_reliability/quality_certificate/material_declaration/group3/be/7d/54/2a/11/68/4e/ad/DM00442253/files/P41A_470XXXY_signed.pdf/jcr:content/translations/en.P41A_470XXXY_signed.pdf}{here}) we can validate that it is a plastic leadframe-based package. Indeed, we can see references for the leadframe and the encapsulation. But let's make a summary for the listed-materials.
 	
 	%Oh god, I need to create a table??
 	
@@ -226,7 +226,7 @@
 	
 	%One major problem where are the tables for the thermal properties? I need to make an overall assesment of the materials. Then I need to recall why some materials are used just for the sake of completeness. Then the rest will be pretty much easier. Theta values will be a little bit hard probably!! But we can handle it, no worries!! We found awesome package application note for all the leaded packages from infineon too!!
 	
-	About the thermal properties, an all in one solution for the requested ones (thermal conductivity, heat capacity, absorptivity, emissivity) couldn't be indexed. Instead a lot of references have been found scattered around the web. Also these values are dependent of that reference and there are some deviations/conflicts. For now, we are going to list the materials and its properties of the most used ones in the IC packaging. We are going to assume the die as only silicon, the leadframe as a \textbf{copper alloy} (Cu-Fe) plated with gold over nickel, the wirebonds as gold and the encapsulation as an abstract \textbf{epoxy mold compound} (EMC)\footnote{For thermal conductivity of various EMC with different fillers see \cite{caplinqepoxcondu}}. For more materials, some tables have been added to the end of this report (\cref{list_tables}) along with their references. Also there is the \cref{Databases} with databases for thermal properties for further investigation. About how to approach the thermal properties of the materials, some comments have been added to the Lessons learned (\cref{lessons_learned}).
+	About the thermal properties, an all in one solution for the requested ones (thermal conductivity, heat capacity, absorptivity, emissivity) couldn't be indexed. Instead a lot of references have been found scattered around the web. Also these values are dependent of that reference and there are some deviations/conflicts. For now, we are going to list the materials and its properties of the most used ones in the IC packaging. We are going to assume the die as only silicon, the leadframe as a \textbf{copper alloy} (Cu-Fe) plated with gold over nickel, the wirebonds as gold and the encapsulation as an abstract \textbf{epoxy mold compound} (EMC)\footnote{For thermal conductivity of various EMC with different fillers see Table I of \cite{Cheng2018StudyOT}}. For more materials, some tables have been added to the end of this report (\cref{list_tables}) along with their references. Also there is the \cref{Databases} with databases for thermal properties for further investigation. About how to approach the thermal properties of the materials, some comments have been added to the Lessons learned (\cref{lessons_learned}).
 	
 	\begin{table}[h!]
 		\centering
@@ -241,7 +241,7 @@
 				\hline
 				\multirow{1} {*} {Cu-Fe}  & - & 260 & - & Figure \ref{fig:copper_alloys} \\
 				\hline
-				\multirow{1} {*} {Epoxy mold compound}  & 1790-1850 & 0.9-2 & 800 & \href{https://www.intel.com/content/dam/www/public/us/en/documents/packaging-databooks/packaging-chapter-05-databook.pdf}{link}, \href{https://www.ti.com/lit/an/spra953c/spra953c.pdf}{link}, \href{https://www.caplinq.com/blog/heat-capacity-of-epoxy-molding-compound_102/}{link} \\
+				\multirow{1} {*} {Epoxy mold compound}  & 1790-1850 & 0.9-2 & 800 & \href{https://web.archive.org/web/20200818132142/https://www.intel.com/content/dam/www/public/us/en/documents/packaging-databooks/packaging-chapter-05-databook.pdf}{link}, \href{https://web.archive.org/web/20200818132243/https://www.ti.com/lit/an/spra953c/spra953c.pdf}{link}, \href{https://web.archive.org/web/20200818132309/https://www.caplinq.com/blog/heat-capacity-of-epoxy-molding-compound_102/}{link} \\
 				\hline
 				\multirow{1} {*} {Plating Ni/Au/Pd}  & - & - & - & - \\
 				\hline
@@ -270,7 +270,7 @@
 	\end{table}
 	%Actually no because each manufacturer may have its own recipe and some details may differ. First of allAnalytically, ley's take a look in the material declaration document. Oops is quite large how to approach it?
 	
-	About  these values we should mention that the exact ones for each composition couldn't be indexed. For the copper alloys\footnote{For copper alloys and its properties see \cite{copperalloydata}}, there are some values in the Table \ref{fig:copper_alloys} though. Reference for an homogenous approach of the plating Nickel/Gold/Palladium is also missing, but thermal properties for each one of these metals are easily available. For accuracy and more information (such as thickness\footnote{Interesting \href{https://www.idt.com/us/en/support/knowledge-base/what-are-specifications-terminal-plating-plating-methods-and-plating-thickness-any-idt-part}{reference} for plating thickness} for the plating materials) we may need to research more about the IC assembly.
+	About  these values we should mention that the exact ones for each composition couldn't be indexed. For the copper alloys\footnote{For copper alloys and its properties see \cite{copperalloydata}}, there are some values in the Table \ref{fig:copper_alloys} though. Reference for an homogenous approach of the plating Nickel/Gold/Palladium is also missing, but thermal properties for each one of these metals are easily available. For accuracy and more information (such as thickness\footnote{ \href{https://web.archive.org/web/20200818132539/https://www.idt.com/us/en/support/knowledge-base/what-are-specifications-terminal-plating-plating-methods-and-plating-thickness-any-idt-part}{Reference} for plating thickness} for the plating materials) we may need to research more about the IC assembly.
 	
 	\begin{table}[h!]
 		\centering
@@ -382,7 +382,7 @@
 	
 	
 	
-	Now let's examine the dimensions of these gullwing\footnote{The J shaped leads are the so called gullwing leads} leads.The range of values for the depicted L parameter based on the OBC MCU is 0,45 - 0,750 mm and the typical values is 0,6 mm. As we can see from the figures the exact contact area is a little bit unclear. The solder paste is applied to the whole surface of the PCB pad (this is valid from the .bxl files from ST Microelectronics in which there is metadata for the solder paste layer) and only the L part of the lead is attached to the solder. But all together are electrical and thermal conductive. So we can assume as contact area the PCB pad? In other words the contact area is the L * (width of the lead, that is typically 0.220 mm) or the soldered PCB pad (1.35 * 0.35 mm). It is worthy mentioning also that leadframe based packages don't ususally touch the surface of the PCB due to the \textbf{standoff} height. The value for this according to the mechanical drawing by the datasheet can range from 0.050 - 0.150
+	Now let's examine the dimensions of these gullwing\footnote{The J shaped leads are the so called gullwing leads} leads.The range of values for the depicted L parameter based on the OBC MCU is 0,45 - 0,750 mm and the typical values is 0,6 mm. As we can see from the figures the exact contact area is a little bit unclear. The solder paste is applied to the whole surface of the PCB pad (this is valid from the .bxl files from ST Microelectronics in which there is metadata for the solder paste layer) and only the L part of the lead is attached to the solder. But all together are electrical and thermal conductive. So we can assume as contact area the PCB pad? In other words the contact area is the L * (width of the lead, that is typically 0.220 mm) or the soldered PCB pad (1.35 * 0.35 mm). It is worthy mentioning also that leadframe based packages don't usually touch the surface of the PCB due to the \textbf{standoff} height. The value for this according to the mechanical drawing by the datasheet can range from 0.050 - 0.150
 	
 	In order to determine the thickness of the solder paste we need to know the stencil design. A typical value will be 130um.
 	\newline
@@ -436,7 +436,7 @@
 	
 	For each one of the memory modules the material declaration is not included in the docs, so we don't know: 1) the terminal plating, 2) base material for the leads. Specifically for OBDH MRAM, from a product change notification about the molding compound used, we can see the code-name "\textbf{Sumitomo G631H}" that is the same in the material declaration of the ST's LQFP packages. So for the Everspin's MRAM we can safely assume that the encapsulation characteristics are the same with the LQFP. For the terminals plating we can assume again that the base material is copper or a copper alloy (or iron\footnote{The material declaration\cite{alliancematdoc} for another TSOP product by Alliance indicates leadframe is iron-based} based) with tin or nickel over gold plating. For clarification, we should contact the vendor.
 	
-	About the NAND memory module, according to the \href{https://www.micron.com/-/media/client/global/documents/products/customer-service-note/csn30.pdf?rev=bac43aa489c14206a281fc281cc7f77a}{user guide}, the leadframe is plated with the usual matte tin or Ni/Pd/Au and the thickness is specified, but it isn't clarified which one of these is used in our particular module. The thickness though is a valuable info (for the standardized world of electronics) and we can use it as a general reference for plating leadframe thickness too.
+	About the NAND memory module, according to the \href{https://drive.google.com/file/d/1wkUdeeUTbI0Y1cVbS6Vn8aBa2U0LKccN/view?usp=sharing}{user guide}, the leadframe is plated with the usual matte tin or Ni/Pd/Au and the thickness is specified, but it isn't clarified which one of these is used in our particular module. The thickness though is a valuable info (for the standardized world of electronics) and we can use it as a general reference for plating leadframe thickness too.
 	\begin{itemize}
 		\item Nickel 0.5 um to 1.2 um
 		\item Gold 0.003 to 0.012 um
@@ -494,7 +494,7 @@
 	
 	\subsection{SOIC}
 	
-	A Small Outline Integrated Circuit (SOIC) is the package of the EPS TPS54339EDDA. It has 8 pins with an exposed pad. The  \href{https://www.ti.com/materialcontent/en/report?pcid=271639&opn=TPS54339EDDA}{Material content} is listed in the documentation. It uses a similar leadframe Copper-Iron based with the LQFP, the plating is tin (Sn) and for the encapsulation, a typical epoxy mold compound is used (epoxy resin + fused silica). 
+	A Small Outline Integrated Circuit (SOIC) is the package of the EPS TPS54339EDDA. It has 8 pins with an exposed pad. The  \href{https://web.archive.org/web/20200818133800/https://www.ti.com/materialcontent/en/report?pcid=263544&opn=TPS54339EDDA}{material content} is listed in the documentation. It uses a similar leadframe Copper-Iron based with the LQFP, the plating is tin (Sn) and for the encapsulation, a typical epoxy mold compound is used (epoxy resin + fused silica). 
 	
 	
 	
@@ -509,11 +509,11 @@
 		\label{fig:my_label}
 	\end{figure}
 	
-	According to the \href{https://www.analog.com/media/en/package-pcb-resources/material-declaration/lcc/LCC_V_14L(ey-14-1).PDF}{material declaration}, the substrate is aluminum-oxide based, a common ceramic solution and the metal lid iron/nickel. The plating is gold/nickel. The ceramic base will have better thermal performance than the rest of the epoxy mold compounds. So for this package a different model approach may be required. But it should be noted that what is referred exactly as lid and base in terms of dimensions is unclear. 
+	According to the \href{https://web.archive.org/web/20200818133905/https://www.analog.com/media/en/package-pcb-resources/material-declaration/lcc/LCC_V_14L(ey-14-1).PDF}{material declaration}, the substrate is aluminum-oxide based, a common ceramic solution and the metal lid iron/nickel. The plating is gold/nickel. The ceramic base will have better thermal performance than the rest of the epoxy mold compounds. So for this package a different model approach may be required. But it should be noted that what is referred exactly as lid and base in terms of dimensions is unclear. 
 	
 	\subsection{LGA}
 	
-	The Land Grid Array (LGA) is an advanced packing method and this is for the COMMS RFFM6406 UHF TX-RX. It is leadless and it has an exposed thermal pad. Material declaration is missing. We can assume for now that it is plastic based (so we can use LQFP thermal properties as reference), because according to NXP's \href{https://www.nxp.com/docs/en/application-note/AN2265.pdf}{application note}, the LGA in the construction is identical with the PBGA except the solder balls. 
+	The Land Grid Array (LGA) is an advanced packing method and this is for the COMMS RFFM6406 UHF TX-RX. It is leadless and it has an exposed thermal pad. Material declaration is missing. We can assume for now that it is plastic based (so we can use LQFP thermal properties as reference), because according to NXP's \href{https://web.archive.org/web/20200818134018/https://www.nxp.com/docs/en/application-note/AN2265.pdf}{application note}, the LGA in the construction is identical with the PBGA except the solder balls. 
 	
 	About plating: "The LGA pad uses the same 0.1 um to 0.9 um of electroless gold plating over electroless nickel as has been used reliably for many years in the traditional BGA configuration" \cite{nxpplating}
 	
@@ -546,7 +546,7 @@
 	
 	%There are thermal characteristics, though. The theta values and so on. But what is the standard approach to characterize the thermal performance of an IC. JEDEC standards and more specific the JES-51 series are the ones that are used a lot in the industry along with the IPC. The JES, open-access, IPC paywalls, closed. But in the thermal characteristics part of the docs of every manufacturer, these values are in compliance with the JEDEC, so we can use them as a reference to demystify how IC providers extract thermal data.
 	
-	For more information I strongly suggest the \href{https://www.ti.com/lit/an/spra953c/spra953c.pdf}{TI application note} and the \href{https://www.nxp.com/docs/en/white-paper/BasicThermalWP.pdf}{NXP's}.
+	For more information I strongly suggest the \href{https://web.archive.org/web/20200818132243/https://www.ti.com/lit/an/spra953c/spra953c.pdf}{TI application note} and the \href{https://web.archive.org/web/20200818123847/https://www.nxp.com/docs/en/white-paper/BasicThermalWP.pdf}{NXP's}.
 	
 	\pagebreak
 	\section{PCB}
@@ -579,9 +579,9 @@
 	\subsubsection{Documentation}
 	
 	\begin{itemize}
-		\item \href{https://www.isola-group.com/products/all-printed-circuit-materials/is400/}{All files}. 
-		\item \href{https://www.isola-group.com/wp-content/uploads/IS400MaterialDeclaration2007.pdf}{Material declaration}
-		\item \href{https://www.isola-group.com/wp-content/uploads/data-sheets/is400.pdf?v=1585950502}{Datasheet}
+		\item \href{https://www.isola-group.com/products/all-printed-circuit-materials/is400/}{All files}
+		\item \href{https://web.archive.org/web/20200818140037/https://www.isola-group.com/wp-content/uploads/IS400MaterialDeclaration2007.pdf}{Material declaration}
+		\item \href{https://web.archive.org/web/20200818140113/https://www.isola-group.com/wp-content/uploads/data-sheets/is400.pdf?v=1585950502}{Datasheet}
 	\end{itemize}
 	
 	
@@ -592,7 +592,7 @@
 		\tabletail{\hline}
 		%\tablecaption{FR4 samples of thermal properties}
 		\begin{mpsupertabular}{|c|c|c|}
-			\multirow{1} {*} {Thermal conductivity (W/mK)\footnote{Reference for the thermo-optical properties \href{https://www.isola-group.com/wp-content/uploads/data-sheets/is400.pdf?v=1585950502}{Datasheet}}} & 0,36 \\  
+			\multirow{1} {*} {Thermal conductivity (W/mK)\footnote{Reference for the thermo-optical properties \href{https://web.archive.org/web/20200818140113/https://www.isola-group.com/wp-content/uploads/data-sheets/is400.pdf?v=1585950502}{datasheet}}} & 0,36 \\  
 			\hline
 			\multirow{1} {*} {Heat capacity (J/kg*K) \footnote{References for the thermo-optical properties Figure \ref{fig:fr4properties}}} & 1000 \\ 
 			\hline
@@ -661,7 +661,7 @@
 	
 	I am going artfully redirect you to the following reference:
 	
-	"Concerning the conductive links between the PCBs, there are two main heat ﬂow paths: through the spacers and through the connector. According to the PC/104 speciﬁcation, the connector is made up of 104 phosphor bronze pins and only pins contributes to the link since connector’s housing height is such as there is no contact with the above PCB". Thermal conductivity of Phosphor bronze 75 W/mK\cite[p.104]{jacques2009thermal}. 
+	"Concerning the conductive links between the PCBs, there are two main heat ﬂow paths: through the spacers and through the connector. According to the PC/104 specification, the connector is made up of 104 phosphor bronze pins and only pins contributes to the link since connector’s housing height is such as there is no contact with the above PCB". Thermal conductivity of Phosphor bronze 75 W/mK \cite[p.104]{jacques2009thermal}. 
 	
 	
 	
@@ -751,7 +751,9 @@
 	Many thermal properties can be indexed. This is true. But most of the times, conflicts will emerge. There is a variety of values referred to the same material and input thermal data is also a part of the engineering process. Assumptions and estimations are  common and they are function of the general modeling approach. Do I need this property, can I model it with another way, how uncertain is this thermal data, is this material oxidized or even if it isn't can I benefit assuming that it is? 
 	
 	\begin{itemize}
-		\item "... models of the electrical and electronic components has been created, despite the \textbf{difficulty} of determining their thermal and optical properties." \cite{paris2015}, "Indeed, the \textbf{actual} structure of TIGRIsat is anodized but the actual value of $\alpha$  and $\epsilon$ are \textbf{unknown}" \cite{paris2015}
+		\item "... models of the electrical and electronic components has been created, despite the \textbf{difficulty} of determining their thermal and optical properties." 
+		
+		"Indeed, the \textbf{actual} structure of TIGRIsat is anodized but the actual value of $\alpha$  and $\epsilon$ are \textbf{unknown}" \cite{paris2015}
 		\item "Often information for properties of individual material is \textbf{unavailable} and, where possible, in-house testing using an emissometer should be performed to acquire it." \cite{mccarron2018developing}
 		
 		%In the literature about the calculations the words "assume", "estimation" are used quite often!
@@ -779,10 +781,10 @@
 		\item https://theengineeringmindset.com/specific-heat-capacity-of-materials/
 		\item \href{https://www.makeitfrom.com/}{makeitfrom.com}. A general online database for various materials. Mined from Wikipedia references
 		\item \href{https://www.engineeringtoolbox.com/}{The Engineering Toolbox}. This reference is used quite a lot.
-		\item \href{https://monarchserver.com/Files/pdf/TableofEmissivity.pdf?14860239451575071105}{Table of Total Emissivity}
-		\item \href{http://www.solarmirror.com/fom/fom-serve/cache/43.html}{Table of absorptivity and emissivity of common materials and coatings}
-		\item \href{https://www.professionalplastics.com/professionalplastics/ThermalPropertiesofPlasticMaterials.pdf}{Thermal Properties of Plastic Materials}
-		\item \href{http://www.infrared-thermography.com/material.htm}{Emissivity Values for Common Materials }
+		\item \href{https://web.archive.org/web/20200818140417/https://monarchserver.com/Files/pdf/TableofEmissivity.pdf?14860239451575071105}{Table of Total Emissivity}
+		\item \href{https://web.archive.org/web/20200818140448/http://www.solarmirror.com/fom/fom-serve/cache/43.html}{Table of absorptivity and emissivity of common materials and coatings}
+		\item \href{https://drive.google.com/file/d/1nZOXnBw6FdrzXW1Nm0Q7n0jfy6kBI26J/view?usp=sharing}{Thermal Properties of Plastic Materials}
+		\item \href{https://web.archive.org/web/20200818140510/http://www.infrared-thermography.com/material.htm}{Emissivity Values for Common Materials}
 		\item \href{https://cindasdata.com/Applications/MPMDDEMO}{CINDAS LLC}. This is an interesting database. There are thermal properties even for very specific mold compounds types like "Sumitomo EME-6300HS" (just to remind you, ST is using Sumitomo type mold compounds as encapsulation) but it is proprietary.
 	\end{itemize}
 	
