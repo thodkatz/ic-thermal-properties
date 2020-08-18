@@ -11,7 +11,7 @@
 \changelog{15/04/2020}{0.2}{INTERNALLY RELEASED}{First release}
 \changelog{18/08/2020}{0.3}{INTERNALLY RELEASED}{Updated:
 	\begin{itemize}
-		\item Fix typos.
+		\item Fix typos and rephrasing.
 		\item Table \ref{tab:plate}: Heat Capacity of Tin changed from 0.226 to 226.
 	\end{itemize}
 	\bigskip
@@ -49,7 +49,7 @@
 	
 	\section{Introduction}
 	
-	This is a \textbf{summary} report for the research about thermal properties of the materials used for AcubeSAT's PCBs. A bunch of resources, documentation and issues are listed because during the process some conflicts and uncertainties emerged. I should mention, also, that thermal analysis is very demanding and complex topic, so the documentation of the sources and thinking-paths are valuable tools to spot the possible wrong assumptions and \textbf{fallacies}. \textbf{The until now estimating values for this research can be found in \href{https://drive.google.com/open?id=1gGPhBZe94Yt7D8FDdGNza4ZnG0pRfhT0xG7Z2tBdK7o}{this} spreadsheet}.
+	This is a \textbf{summary} report for the research about thermal properties of the materials used for AcubeSAT's PCBs. A bunch of resources, documentation and issues are listed because during the process some conflicts and uncertainties emerged. I should mention that thermal analysis is very demanding and complex topic, so the documentation of the resources and thinking-paths are valuable tools to spot the possible wrong assumptions and \textbf{fallacies}. \textbf{The until now estimating values for this research can be found in \href{https://drive.google.com/open?id=1gGPhBZe94Yt7D8FDdGNza4ZnG0pRfhT0xG7Z2tBdK7o}{this} spreadsheet}.
 	
 	%Say that in the LQFP section we will make a more detailed analysis from the rest of the packages. But what is packaging and what is the LQFP thing?
 	
@@ -73,7 +73,7 @@
 		\item \textbf{System level}, PCB to PCB interconnect. This is where multiple PCBs are connected all together for a large application.
 	\end{enumerate}
 	
-	In order to understand a little bit more all of these new/fuzzy terms like die, leadframe, substrate, wirebonds (bonding-wires), we will give an example of a package based on the through-hole technology. Thus let's take a look of a very well-known package that showed among the first ones in the job market. This is the dual line package (\textbf{DIP}). As we can see, the leadframe is the structure that houses the chip and interfaces the integrated circuit with the leads. The interface that change the pitch from the die to the outer leads is called \textbf{interposer}. Sometimes leadframe and interposer are used interchangeably. The materials used in the leadframe is copper or copper alloys and it is usually plated with tin or gold over nickel for oxidation-protection and to ensure wirebondability and solderability for the assembly process. The die is attached to the leadframe pad using an organic compound (die attachment), epoxy resin with metal fillers (e.g. silver). Finally, for the encapsulation, the most used and cost-effective solution is the plastic package. It is epoxy resin with ceramic fillers like fused silica or alumina. It should be noted that \textbf{mold compounds} are called the materials used in the encapsulation process. 
+	In order to understand a little bit more all of these new/fuzzy terms like die, leadframe, substrate, wirebonds (bonding-wires), we will give an example of a package based on the through-hole technology. Thus let's take a look of a very well-known package that showed among the first ones in the job market. This is the dual line package (\textbf{DIP}). As we can see, the leadframe is the structure that houses the chip and interfaces the integrated circuit with the leads. The interface that change the pitch from the die to the outer leads is called \textbf{interposer}. Sometimes leadframe and interposer are used interchangeably. The material used in the leadframe is copper or copper alloys and it is usually plated with tin or gold over nickel for oxidation-protection and to ensure wirebondability and solderability for the assembly process. The die is attached to the leadframe pad using an organic compound (die attachment), epoxy resin with metal fillers (e.g. silver). Finally, for the encapsulation, the most used and cost-effective solution is the plastic package. It is epoxy resin with ceramic fillers like fused silica or alumina. It should be noted that \textbf{mold compounds} are called the materials used in the encapsulation process. 
 	
 	%Add the thermosetting property of the plastic thing, temperature and the moling process and the polymeric, adhesive nature and so on???????//
 	
@@ -155,7 +155,7 @@
 	
 	It should be noted that the \textbf{material declaration}, the document that lists all the materials used in packaging, isn't provided for all of them. To be more specific this particular type of doc is successfully indexed from manufacturers such as ST Microelectronics, Texas Instruments (TI) and Analog Devices that generally have great documentation and support. For the rest, by the code-name\footnote{The IC package naming convention is a function of the physical dimensions, pins, pitch and the overall anatomy of the package. Most of them are standardized but vendors may use different names} of the package (e.g. QFP, SOIC), we can safely think abstractly for the anatomy and the materials used. This is not accurate, but it bares the risk for the scope of this report. In other words, if the package is a well known and among the standardized ones, there are many chances that will be identical with other references that using the same package (of course some details may be different). For these with the missing material declaration, if we are finally going to follow the detailed approach, we need, except the standardized dimensions, to contact the vendor and request more information (it is worth mentioning that this kind of contact may be unsuccessful, so a more "delicate" approach would be more suitable). 
 	
-	Finally, about the approach that we are going to follow, for the physical dimensions part, of the upcoming IC packages, we will focus more to the thermal desired lead-PCB interconnection.
+	%Finally, about the approach that we are going to follow, for the physical dimensions part, of the upcoming IC packages, we will focus more to the thermal desired lead-PCB interconnection.
 	
 	%A word about packages? Plastic and ceramic? Actually the hollistic approach I will put here in this section for alternatives sticked to the DIP package. In the LQFP we are going to stick to the leadframe, the thermal characteristics and so on. Or no? I will think it about after a break! Explain the leadframe and th substrate style and say that OBDH MCU leadframe examined analysis and so. All the other are pretty much the same! I dont know for some reason for the electrical components I have a biased opinion of what should be analyzed first.
 	
@@ -163,7 +163,7 @@
 	
 	%The package of the OBDH MCU is called LQFP and this is actually a code-name that is associated with certain physical dimensions (to find out a detailed list of the ic packages with their physical dimensions see here). This type of package is used for other components of the AcubeSAT's boards so the analysis will be sort of the same with all the components under the LQFP umbrella term (and this also applies for each different package that we are going to analyze). But it should be noted that the code-name of the package isn't always associated with a specific material declaration. Each manufacturer have its own recipe so some details may be different. But in general most of the times we can safely assume the type of the package and type of the housing of the die (leadframe or substrate). But if it assumed that we need to test the IC in a detail, then we need sure to contact each manufacturer to provide us the material declaration and the standard for the physical dimensions of the die, die attachment, leadframe, wirebonds and so on. (For now we will continue) We are going to stick to the OBDH MCU though, because it is very well documented from the provider/vendor (st microelectronics) and the material declaration doc, that is necessary to find out the materials used and its thermal properties , is among the documentation, too. 
 	
-	LQFP stands for Low profile Quad Flat Package, it has 144 pins and it belongs to the very well-know QFP series. There are slight variations for the physical dimensions of the components associated with this code-name, but the AcubeSAT's components with this tag are all the same. These are the \textbf{OBDH, SU and ADCS MCU}.
+	LQFP stands for Low profile Quad Flat Package, it has 144 pins and belongs to the very well-know QFP series. There are slight variations for the physical dimensions of the components associated with this code-name, but the AcubeSAT's components with this tag are all the same. These are the \textbf{OBDH, SU and ADCS MCU}.
 	%We should mention that we for the physical dimensions part we will focus to the leads-PCB interconnection. So without further ado let's start dissecting this package. Double check that the dimensions are the same.
 	
 	First, from the material declaration (see the complete document \href{https://web.archive.org/web/20200818131830/https://www.st.com/content/ccc/resource/quality_and_reliability/quality_certificate/material_declaration/group3/be/7d/54/2a/11/68/4e/ad/DM00442253/files/P41A_470XXXY_signed.pdf/jcr:content/translations/en.P41A_470XXXY_signed.pdf}{here}) we can validate that it is a plastic leadframe-based package. But let's make a summary for the listed-materials.
@@ -199,7 +199,7 @@
 	\end{table}
 	
 	
-	As we can see in the table \ref{tab:matdoc}. in the die level the base material is the Silicon and all the other metals are used for the so called metallization that serves the role of oxidation protection for the chip. The die attachment is a typical epoxy resin with silver as filler metal and for the leadframe we have a copper alloy that it is pre-plated with nickel over gold.
+	As we can see in the table \ref{tab:matdoc}, in the die level, the base material is the Silicon and all the other metals are used for the so called metallization that serves the role of oxidation protection for the chip. The die attachment is a typical epoxy resin with silver as filler metal and for the leadframe we have a copper alloy that it is pre-plated with nickel over gold.
 	
 	%A talk about die attachment, a talk about bonding wires and talk about mold compounds, the organic materials and so on!! And redirect here for more info and say in general that for the lqfp more information and alternatives will be added and some concerns. I will figure it out. Now thermal proeprties, the ultimate table. Say here that other used materials could be such and such, and that in the material declaration the gold choice is among the popular ones and this type of writing. A little more details about what else could be the materials and thei role for protection and oxidation. Not too much though
 	
@@ -272,7 +272,9 @@
 	\end{table}
 	%Actually no because each manufacturer may have its own recipe and some details may differ. First of allAnalytically, ley's take a look in the material declaration document. Oops is quite large how to approach it?
 	
-	About  these values we should mention that the exact ones for each composition couldn't be indexed. For the copper alloys\footnote{For copper alloys and its properties see \cite{copperalloydata}}, there are some values in the Table \ref{fig:copper_alloys} though. Reference for an homogenous approach of the plating Nickel/Gold/Palladium is also missing, but thermal properties for each one of these metals are easily available. For accuracy and more information (such as thickness\footnote{ \href{https://web.archive.org/web/20200818132539/https://www.idt.com/us/en/support/knowledge-base/what-are-specifications-terminal-plating-plating-methods-and-plating-thickness-any-idt-part}{Reference} for plating thickness} for the plating materials) we may need to research more about the IC assembly.
+	%About  these values we should mention that the exact ones for each composition couldn't be indexed. For the copper alloys\footnote{For copper alloys and its properties see \cite{copperalloydata}}, there are some values in the Table \ref{fig:copper_alloys} though.
+	
+	Reference for an homogenous approach of the plating Nickel/Gold/Palladium is also missing, but thermal properties for each one of these metals are easily available. For accuracy and more information (such as thickness\footnote{ \href{https://web.archive.org/web/20200818132539/https://www.idt.com/us/en/support/knowledge-base/what-are-specifications-terminal-plating-plating-methods-and-plating-thickness-any-idt-part}{Reference} for plating thickness} for the plating materials) we may need to research more about the IC assembly.
 	
 	\begin{table}[h!]
 		\centering
@@ -384,7 +386,7 @@
 	
 	
 	
-	Now let's examine the dimensions of these gullwing\footnote{The J shaped leads are the so called gullwing leads} leads. The range of values for the depicted L parameter, according to the OBC MCU datasheet, is 0,45 - 0,750 mm and the typical value is 0,6 mm. As we can see from the figures, the exact contact area is a little bit unclear. The solder paste is applied to the whole surface of the PCB pad (this is valid from the .bxl files\footnote{.bxl file extension is a vendor standardized format that can be used via Ultralibrarian software to export data such as schematic symbols, footpritns, 3D models compatible for a wide range of CAD tools.} from ST Microelectronics in which there is metadata for the solder paste layer) and only the L part of the lead is attached to the solder. But all together are electrical and thermal conductive. So we can assume as contact area the PCB pad? In other words the contact area is the L * (width of the lead, that is typically 0.220 mm) or the soldered PCB pad (1.35 * 0.35 mm). It is worth mentioning also that leadframe based packages don't usually touch the surface of the PCB due to the \textbf{standoff} height. The value for this according to the mechanical drawing can range from 0.050 - 0.150.
+	Now let's examine the dimensions of these gullwing\footnote{The J shaped leads are the so called gullwing leads} leads. The range of values for the depicted L parameter, according to the OBC MCU datasheet, is 0,45 - 0,750 mm and the typical value is 0,6 mm. As we can see from the figures, the exact contact area is a little bit unclear. The solder paste is applied to the whole surface of the PCB pad (this is valid from the .bxl files\footnote{.bxl file extension is a vendor standardized format that can be used via Ultralibrarian software to export data such as schematic symbols, footpritns, 3D models compatible for a wide range of CAD tools.} from ST Microelectronics in which there is metadata for the solder paste layer) and only the L part of the lead is attached to the solder. But all together are electrical and thermal conductive. So we can assume as contact area the PCB pad? In other words the contact area is the L * (width of the lead, that is typically 0.220 mm) or the soldered PCB pad (1.35 * 0.35 mm). It is worth mentioning also that leadframe based packages don't usually touch the surface of the PCB due to the \textbf{standoff} height. The value for this based on the mechanical drawing can range from 0.050 - 0.150.
 	
 	In order to determine the thickness of the solder paste we need to know the stencil design. A typical value will be 130um.
 	
@@ -394,11 +396,11 @@
 	
 	%A word about solder paste. The concern for prisma, solder paste theral properties,conductive adhesive and so on.
 	
-	For the bonding of two metal surfaces there are two main methods 1) \textbf{electrical conductive adhesive} and 2) \textbf{solder paste} (solder with flux). 
+	For the bonding of two metal surfaces there are two main methods: 1) \textbf{electrical conductive adhesive} and 2) \textbf{solder paste} (solder with flux). 
 	
 	%In the above section we make the assumption that solder is used for the interconnection, but actually this is need to be verified because in the pb-free, green approach other materials may be used except the green solder thing.
 	
-	Conductive adhesive is a composite of thermosetting epoxy adhesive resin and conductive metal (or metal-coated) particles, such as silver, nickel, gold, copper and indium or tin oxides. On the other hand, the solder is a metal alloy and can be divided to the solder with lead (tin-lead, SnPb) and the lead-free. For the first, the most common is the 63Sn37Pb but due to environmental and health concerns, lead usage is prohibited by regulations (RoHS, REACH) so manufacturers are tending to avoiding it. Tin (Sn) and tin-silver-copper (SnAgCu) belong to the lead-free group. In terms of thermal performance, thermal conductivity is higher in solders (60-65 W/mK) than adhesives (3-25 W/mK) \cite{leadvssolde}. 
+	Conductive adhesive is a composite of thermosetting epoxy adhesive resin and conductive metal (or metal-coated) particles, such as silver, nickel, gold, copper and indium or tin oxides. On the other hand, the solder is a metal alloy and can be divided to the solder with lead (tin-lead, SnPb) and the lead-free. For the first, the most common is the 63Sn37Pb, but due to environmental and health concerns, lead usage is prohibited by regulations (RoHS, REACH) so manufacturers are tending to avoiding it. Tin (Sn) and tin-silver-copper (SnAgCu) belong to the lead-free group. In terms of thermal performance, thermal conductivity is higher in solders (60-65 W/mK) than adhesives (3-25 W/mK) \cite{leadvssolde}. 
 	
 	The assembly provider of the in-house AcubeSAT's PCBs is Prisma Electronics. It is unclear which of these two methods in the FM models will be used, so clarifications should be requested. Nevertheless if we know the type, then we can retrieve thermal data from these references \cite{solder, wiki:solderalloys, propemetalengedge}.
 	
@@ -495,7 +497,7 @@
 	
 	\subsection{Custom package by Analog}
 	
-	The ADCS Gyro is consisted of two parts. The ADXRS453BEYZ for the z axis and the ADXRS453BRGZ for the pitch and roll. The first one is a low-cost SOIC package but the second one is different with what we have encountered so far. It is a custom leadless "innovative vertical mount package (VMP)", as Analog Devices states, with ceramic materials. It has two terminals. One in the bottom and one in the back. But as Analog Devices claims only the bottom should be used, the other is for internal evaluation purposes. 
+	The ADCS Gyro is consisted of two parts. The ADXRS453BEYZ for the z axis and the ADXRS453BRGZ for the pitch and roll. The first one is a low-cost SOIC package but the second one is different with what we have encountered so far. It is a custom leadless "innovative vertical mount package (VMP)", as Analog Devices states, with ceramic materials. It has two terminals: one in the bottom and one in the back. However, only the bottom should be used, the other is for internal evaluation purposes. 
 	
 	\begin{figure}[h!]
 		\centering
@@ -521,7 +523,7 @@
 	%But how can someone use this thermal data despite having a board different from the test assumption? 
 	%In general, each manufacturer may use different standards to evaluate the thermal characteristics. So when trying to find out which package should be used (with a quick assessment), emphasis should be also given to what standards is compliant the test method, what were the conditions of the measurement. If they are the same for the components then probably a reliable assessment can be made. Is this simulation or real, though? 
 	
-	Until now we have investigated the anatomy and the materials of some IC packages along with its properties. But in the thermal modeling aspect, in order for the supplier to give to the users an overview of the thermal performance, a standardized approach is usually followed. Under the section "Thermal characteristics" or "Thermal metrics"in datasheets,  there is data that can be used to evaluate the junction temperature. This data is produced by thermal simulations with defined by the standards conditions and test boards.
+	Until now we have investigated the anatomy and the materials of some IC packages along with their properties. Regarding the thermal modeling, in order for the supplier to give to the users an overview of the thermal performance, a standardized approach is usually followed. Under the section "Thermal characteristics" or "Thermal metrics" in datasheets,  there is data that can be used to evaluate the junction temperature. This data is produced by thermal simulations with conditions and test boards suggested by various standards.
 	
 	The so called \textbf{theta} values are the indicators of this performance and some of them, using the resistor model, are defined as the thermal resistance between 1) die and ambient, 2) die and case, 3) case and ambient.
 	
@@ -665,11 +667,11 @@
 	
 	\section{Lessons learned}\label{lessons_learned}
 	
-	In the beginning of the research, the thinking path about finding materials was oriented to search for each manufacturer the "material declaration" document. Knowing the materials, we will be able to find its thermal properties. But for each part of the component we are interested (e.g. encapsulation) a mixture of materials is used. Thus we assume that we need to focus on the material with the highest concentration. Later for optimization we could find the thermal properties of all them along with a formula to calculate the overall performance. This approach may be not be valid and probably should be avoided. The primary reason is that this concept is error-prone and adds significant load, trying to demystify the thermal properties of each material and for each component, lacking at the same time the resources to find reliable data. A more abstract way of thinking is may required. So as it is mentioned before, in the IC packaging, a process which several chemical compounds are involved, we can safely assume the general model of an epoxy mold compound for the plastic packages. The same homogenous approach applies for the FR4 too, but fortunately we were able to find experimental data for our case provided by the supplier.
+	In the beginning of the research, the thinking path about finding materials was oriented to search for each manufacturer the "material declaration" document. Knowing the materials, we will be able to find their thermal properties. But for each part of the component we are interested (e.g. encapsulation), a mixture of materials is used. Thus we assume that we need to focus on the material with the highest concentration. Later for optimization we could find the thermal properties of all of them along with a formula to calculate the overall performance. This approach may be not be valid and probably should be avoided. The primary reason is that this concept is error-prone and adds significant load, trying to demystify the thermal properties of each material and for each component, lacking at the same time the resources to find reliable data. A more abstract way of thinking is may required. So as it is mentioned before, in the IC packaging, a process which several chemical compounds are involved, we can safely assume the general model of an epoxy mold compound for the plastic packages. The same homogenous approach applies for the FR4 too, but fortunately we were able to find experimental data for our case provided by the supplier.
 	
 	%Give an example of conductive adhesive that is polymer with metal. Assume that only polymer then all the thermal characteristics of the metallization will be lost in the void. It is very important to treat it as composite material.
 	
-	When approaching the material properties of a mixture of materials, there are many chances that what you are looking for has some kind of a code-name, a specific composition. These are common alloys and it would be helpful to identify it by checking the composition from the material doc. 
+	When approaching the properties of a mixture of materials, there are many chances that what you are looking for has some kind of a code-name, a specific composition. These are common alloys and it would be helpful to identify it by checking the composition from the material doc. 
 	
 	%Should I say here also the thing with what? The matrix of materials, with nodes if you know the thickness and the process example with pins anf bronze, I have a reference in the pcb modelling for that!
 	
@@ -683,7 +685,7 @@
 	
 	%For the homogenous approach the PCB assumed as an epoxy, fr4, copper body. The formula that is used and so on, put citation
 	
-	In some case we find modeling the PCB as an homogenous material and it is worth mentioning them:
+	In some case we found modeling the PCB as an homogenous material and it is worth mentioning the following:
 	
 	%We find some references regarding the PCB modeling and it is worth mentioning them:
 	
@@ -707,7 +709,7 @@
 		
 		"The aluminum external surface is the only \textbf{external} part which can be used to control the temperature by modifying the optical properties of the material (with an adequate surface treatment); indeed, the optical properties of the solar cells and of the PCB that are mounted to them cannot be modified" \cite{paris2015}.
 		
-		Also in the TIGRIsat's simulations , when they didn't take into account the surface treatment of the aluminum structure/rails, the temperature had exceed the maximum one. The reason behind this was the big difference between aluminum's absorptivity (0,379) and emissivity (0,08) due to the aforementioned assumption that there wasn't any surface treatment \cite{paris2015}. Based on that, the input data of "critical" components should be investigated thoroughly and the change of thermal-optical properties can be also part of the strategy.
+		Also in the TIGRIsat's simulations , when they didn't take into account the surface treatment of the aluminum structure/rails, the temperature had exceed the maximum one. The reason behind this was the big difference between aluminum's absorptivity (0,379) and emissivity (0,08) due to the aforementioned assumption that there wasn't any surface treatment \cite{paris2015}. Based on that, the input data of "critical" components should be investigated thoroughly and changing the thermal-optical properties can be also part of the strategy.
 	\end{itemize}
 	
 	
@@ -747,12 +749,13 @@
 	
 	%version 2
 	
-	Many thermal properties can be indexed. This is true. But most of the times, conflicts will emerge. There is a variety of values referred to the same material and input thermal data is also a part of the engineering process. Assumptions and estimations are  common and they are function of the general modeling approach. Do I need this property, can I model it with another way, how uncertain is this thermal data, is this material oxidized or even if it isn't can I benefit assuming that it is? 
+	Many thermal properties can be indexed. This is true. But most of the times, conflicts will emerge. There is a variety of values referred to the same material and thermal data as an input is also a part of the engineering process. Assumptions and estimations are a common thing to do and they are function of the general modeling approach. Do I need this property, can I model it with another way, how uncertain is this thermal data, is this material oxidized or even if it isn't can I benefit assuming that it is? 
 	
 	\begin{itemize}
 		\item "... models of the electrical and electronic components has been created, despite the \textbf{difficulty} of determining their thermal and optical properties." 
 		
 		"Indeed, the \textbf{actual} structure of TIGRIsat is anodized but the actual value of $\alpha$  and $\epsilon$ are \textbf{unknown}" \cite{paris2015}
+		
 		\item "Often information for properties of individual material is \textbf{unavailable} and, where possible, in-house testing using an emissometer should be performed to acquire it." \cite{mccarron2018developing}
 		
 		%In the literature about the calculations the words "assume", "estimation" are used quite often!
